@@ -1,0 +1,30 @@
+PATH
+  remote: /src/ralyxa
+  specs:
+    ralyxa (1.6.2)
+      alexa_verifier (~> 1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    alexa_verifier (1.0.0)
+    mustermann (1.0.2)
+    rack (2.0.4)
+    rack-protection (2.0.1)
+      rack
+    sinatra (2.0.1)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.1)
+      tilt (~> 2.0)
+    tilt (2.0.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ralyxa!
+  sinatra
+
+BUNDLED WITH
+   1.16.1

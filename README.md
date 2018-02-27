@@ -22,6 +22,7 @@ Goal is to get a search and booking flow working. Main items:
 
 - Official (recent) example skill with state which could serve as a template: https://github.com/alexa/skill-sample-nodejs-highlowgame
 - [Ralyxa](https://github.com/sjmog/ralyxa): A Ruby framework for interacting with Amazon Alexa
+- [Pizza Buddy](https://github.com/sjmog/pizza_buddy): Ralyxa example app
 
 ## Considertions
 
