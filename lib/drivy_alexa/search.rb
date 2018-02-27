@@ -39,7 +39,8 @@ module DrivyAlexa
         "latitude": 48.876779,
         "longitude": 2.3592853,
         "page": 1,
-        "per_page": 20
+        "per_page": 20,
+        "instant_bookable": "yes"
       }
     end
   end
