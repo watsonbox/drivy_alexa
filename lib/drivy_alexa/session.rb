@@ -1,7 +1,5 @@
 module DrivyAlexa
   class Session
-    attr_reader :duration
-
     def initialize(request)
       @request = request
 
@@ -11,7 +9,7 @@ module DrivyAlexa
     end
 
     def book_mode!
-      parse_search_slots
+      save_search_slots
       validate_search_data
 
       @mode = DrivyAlexa::MODES[:book]
@@ -27,9 +25,17 @@ module DrivyAlexa
       end
     end
 
+    def starts_at
+      Time.parse("#{@start_date} #{@start_time}")
+    end
+
+    def ends_at
+      starts_at + ISO8601::Duration.new(@duration).to_seconds
+    end
+
     private
 
-    def parse_search_slots
+    def save_search_slots
       @start_time = @request.slot_value("start_time") # e.g. "05:00"
       @start_date = @request.slot_value("start_date") # e.g. "2018-03-02" (not required)
       @duration   = @request.slot_value("duration")   # e.g. "P2D"
