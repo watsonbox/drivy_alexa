@@ -9,7 +9,7 @@ Goal is to get a search and booking flow working. Main items:
 - [x] Come up with a rough conversation flow
 - [x] Design the interaction model (intents/slots etc)
 - [x] Create the skill / interaction model in the Alexa Beta Console
-- [ ] Use [Ralyxa](https://github.com/sjmog/ralyxa) and ngrok to get a simple Ruby service hooked up to the skill and working with the Alexa simulator
+- [x] Use [Ralyxa](https://github.com/sjmog/ralyxa) and ngrok to get a simple Ruby service hooked up to the skill and working with the Alexa simulator
 - [ ] Develop the full search and booking flow
 - [ ] Modify the Drivy app (API) locally to use a hardcoded session
 - [ ] Hook up the skill to the Drivy app to actually make bookings
@@ -23,6 +23,17 @@ Goal is to get a search and booking flow working. Main items:
 - Official (recent) example skill with state which could serve as a template: https://github.com/alexa/skill-sample-nodejs-highlowgame
 - [Ralyxa](https://github.com/sjmog/ralyxa): A Ruby framework for interacting with Amazon Alexa
 - [Pizza Buddy](https://github.com/sjmog/pizza_buddy): Ralyxa example app
+
+## Usage
+
+```bash
+$ brew cask install ngrok
+$ ngrok http 4567
+$ gem intall rerun
+$ rerun 'bundle exec ruby ./server.rb'
+```
+
+Using [`rerun`](https://github.com/alexch/rerun) ensures that code changes get reloaded during development.
 
 ## Considertions
 
