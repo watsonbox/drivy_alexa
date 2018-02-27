@@ -1,11 +1,15 @@
 module DrivyAlexa
   class Session
+    attr_reader :car_id
+
     def initialize(request)
       @request = request
 
+      @mode       = request.session_attribute("mode")
       @start_time = request.session_attribute("start_time")
       @start_date = request.session_attribute("start_date")
       @duration   = request.session_attribute("duration")
+      @car_id     = request.session_attribute("car_id")
     end
 
     def book_mode!
@@ -15,13 +19,18 @@ module DrivyAlexa
       @mode = DrivyAlexa::MODES[:book]
     end
 
+    def car!(id)
+      @car_id = id
+    end
+
     def attributes
       {
         mode: @mode.to_s,
       }.tap do |attributes|
-        attributes["start_time"] = @start_time if @start_time
-        attributes["start_date"] = @start_date if @start_date
-        attributes["duration"]   = @duration if @duration
+        attributes["start_time"] = @start_time if @start_time.present?
+        attributes["start_date"] = @start_date if @start_date.present?
+        attributes["duration"]   = @duration if @duration.present?
+        attributes["car_id"]     = @car_id if @car_id.present?
       end
     end
 

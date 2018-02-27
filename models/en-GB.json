@@ -22,15 +22,7 @@
                 "slots": [
                     {
                         "name": "start_time",
-                        "type": "AMAZON.TIME",
-                        "samples": [
-                            "From nine o'clock",
-                            "Half past seven",
-                            "Two am",
-                            "At midnight",
-                            "At elevent o'clock",
-                            "At five pm"
-                        ]
+                        "type": "AMAZON.TIME"
                     },
                     {
                         "name": "start_date",
@@ -94,6 +86,10 @@
                 "name": "FindAnotherCarIntent",
                 "slots": [],
                 "samples": [
+                    "what else is there",
+                    "what else",
+                    "are there any others",
+                    "any others",
                     "next car",
                     "find another car",
                     "show me more cars",

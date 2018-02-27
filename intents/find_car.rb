@@ -1,6 +1,4 @@
 intent "FindCarIntent" do
-  p request.instance_variable_get("@request")['request']['intent']['slots']
-
   session = DrivyAlexa::Session.new(request)
 
   if (request.dialog_state != "COMPLETED")
@@ -16,6 +14,8 @@ intent "FindCarIntent" do
 
     first_car = search.cars.first
     first_car_year = first_car["display_specs"].split.first
+
+    session.car!(first_car["id"])
 
     answer = "I found #{search.total_count} cars. "
     answer << "The closest is a #{first_car_year} #{first_car["title"]} for #{first_car["display_price"]}. "

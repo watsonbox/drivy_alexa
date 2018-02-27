@@ -23,6 +23,10 @@ module DrivyAlexa
       @response["cars"]
     end
 
+    def car_after_id(id)
+      cars[cars.index { |car| car["id"] == id } + 1]
+    end
+
     private
 
     def query
