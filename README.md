@@ -10,6 +10,9 @@ Goal is to get a search and booking flow working. Main items:
 - [x] Design the interaction model (intents/slots etc)
 - [x] Create the skill / interaction model in the Alexa Beta Console
 - [x] Use [Ralyxa](https://github.com/sjmog/ralyxa) and ngrok to get a simple Ruby service hooked up to the skill and working with the Alexa simulator
+- [x] Make some updates to Ralyxa:
+  - [x] Add support for DelegateDialog response directive
+  - [x] Allow restriction of intents to a session values (for state/mode)
 - [ ] Develop the full search and booking flow
 - [ ] Modify the Drivy app (API) locally to use a hardcoded session
 - [ ] Hook up the skill to the Drivy app to actually make bookings
