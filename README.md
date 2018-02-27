@@ -1,10 +1,12 @@
 # Drivy Alexa Skill
 
-## Goal
+![Example conversation](https://raw.githubusercontent.com/watsonbox/drivy_alexa/master/res/example_conversation.jpg)
+
+## Goals
 
 Goal is to get a search and booking flow working. Main items:
 
-- [ ] Come up with a rough conversation flow
+- [x] Come up with a rough conversation flow
 - [ ] Design the interaction model (intents/slots etc)
 - [ ] Create the skill / interaction model in the Alexa Beta Console
 - [ ] Use [Ralyxa](https://github.com/sjmog/ralyxa) and ngrok to get a simple Ruby service hooked up to the skill and working with the Alexa simulator
