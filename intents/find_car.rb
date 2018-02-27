@@ -6,6 +6,8 @@ intent "FindCarIntent" do
   if (request.dialog_state != "COMPLETED")
     delegate_dialog
   else
+    DrivyAlexa::ProgressiveResponse.new(request).respond("Searching")
+
     session.book_mode!
 
     search = DrivyAlexa::Search.new.tap do |search|

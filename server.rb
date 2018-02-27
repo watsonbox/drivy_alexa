@@ -8,6 +8,7 @@ require "httparty"
 require_relative "lib/drivy_alexa"
 require_relative "lib/drivy_alexa/session"
 require_relative "lib/drivy_alexa/search"
+require_relative "lib/drivy_alexa/progressive_response"
 
 Ralyxa.configure do |config|
   config.validate_requests = false
