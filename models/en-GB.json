@@ -1,0 +1,187 @@
+{
+    "languageModel": {
+        "invocationName": "drivy",
+        "intents": [
+            {
+                "name": "AMAZON.HelpIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "AMAZON.StopIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "AMAZON.CancelIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "FindCarIntent",
+                "slots": [
+                    {
+                        "name": "start_time",
+                        "type": "AMAZON.TIME",
+                        "samples": [
+                            "From nine o'clock",
+                            "Half past seven",
+                            "Two am",
+                            "At midnight",
+                            "At elevent o'clock",
+                            "At five pm"
+                        ]
+                    },
+                    {
+                        "name": "start_date",
+                        "type": "AMAZON.DATE"
+                    },
+                    {
+                        "name": "duration",
+                        "type": "AMAZON.DURATION",
+                        "samples": [
+                            "twelve hours and thirty minutes",
+                            "seven hours",
+                            "four days",
+                            "For five hours"
+                        ]
+                    }
+                ],
+                "samples": [
+                    "book a car {start_date} at {start_time}",
+                    "find a car {start_date} at {start_time}",
+                    "book a car",
+                    "find a car",
+                    "book me a car for {start_date} at {start_time}",
+                    "find me a car for {start_date} at {start_time}",
+                    "book me a car at {start_time} {start_date} for {duration}",
+                    "book me a car {start_date} at {start_time} for {duration}",
+                    "book me a car on {start_date} at {start_time} for {duration}",
+                    "find me a car at {start_time} {start_date} for {duration}",
+                    "find me a car {start_date} at {start_time} for {duration}",
+                    "find me a car on {start_date} at {start_time} for {duration}",
+                    "book me a car",
+                    "find me a car",
+                    "find me a car at {start_time} on {start_date} for {duration}",
+                    "book me a car at {start_time} for {duration}"
+                ]
+            },
+            {
+                "name": "AMAZON.YesIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "AMAZON.NoIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "FindCheaperCarIntent",
+                "slots": [],
+                "samples": [
+                    "that price is too high",
+                    "cheaper cars",
+                    "I need something cheaper",
+                    "find cheaper cars",
+                    "what's the cheapest car",
+                    "that's too expensive",
+                    "is there anything cheaper",
+                    "are there any cheaper cars"
+                ]
+            },
+            {
+                "name": "FindAnotherCarIntent",
+                "slots": [],
+                "samples": [
+                    "next car",
+                    "find another car",
+                    "show me more cars",
+                    "are there more cars",
+                    "show me the next car",
+                    "show me another car",
+                    "I don't like that car",
+                    "what other cars are there",
+                    "are there any other cars"
+                ]
+            }
+        ],
+        "types": []
+    },
+    "dialog": {
+        "intents": [
+            {
+                "name": "FindCarIntent",
+                "confirmationRequired": false,
+                "prompts": {},
+                "slots": [
+                    {
+                        "name": "start_time",
+                        "type": "AMAZON.TIME",
+                        "confirmationRequired": false,
+                        "elicitationRequired": true,
+                        "prompts": {
+                            "elicitation": "Elicit.Slot.134376273038.477018854170"
+                        }
+                    },
+                    {
+                        "name": "start_date",
+                        "type": "AMAZON.DATE",
+                        "confirmationRequired": false,
+                        "elicitationRequired": false,
+                        "prompts": {}
+                    },
+                    {
+                        "name": "duration",
+                        "type": "AMAZON.DURATION",
+                        "confirmationRequired": false,
+                        "elicitationRequired": true,
+                        "prompts": {
+                            "elicitation": "Elicit.Slot.134376273038.381878969288"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "prompts": [
+        {
+            "id": "Elicit.Slot.134376273038.477018854170",
+            "variations": [
+                {
+                    "type": "PlainText",
+                    "value": "When do you need the car?"
+                },
+                {
+                    "type": "PlainText",
+                    "value": "For what time?"
+                },
+                {
+                    "type": "PlainText",
+                    "value": "When would you like the car?"
+                },
+                {
+                    "type": "PlainText",
+                    "value": "At what time?"
+                },
+                {
+                    "type": "PlainText",
+                    "value": "What time would you like a car?"
+                }
+            ]
+        },
+        {
+            "id": "Elicit.Slot.134376273038.381878969288",
+            "variations": [
+                {
+                    "type": "PlainText",
+                    "value": "How long will you need the car?"
+                },
+                {
+                    "type": "PlainText",
+                    "value": "For how long do you need the car?"
+                }
+            ]
+        }
+    ]
+}
