@@ -8,9 +8,17 @@ intent "FindCarIntent" do
   else
     session.book_mode!
 
-    ask(
-      "I found some cars. Shall I book one for you?",
-      session_attributes: session.attributes
-    )
+    search = DrivyAlexa::Search.new.tap do |search|
+      search.perform(starts_at: session.starts_at, ends_at: session.ends_at)
+    end
+
+    first_car = search.cars.first
+    first_car_year = first_car["display_specs"].split.first
+
+    answer = "I found #{search.total_count} cars. "
+    answer << "The closest is a #{first_car_year} #{first_car["title"]} for #{first_car["display_price"]}. "
+    answer << "Shall I book it for you?"
+
+    ask(answer, session_attributes: session.attributes)
   end
 end

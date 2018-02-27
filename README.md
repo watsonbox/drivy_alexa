@@ -14,8 +14,9 @@ Goal is to get a search and booking flow working. Main items:
   - [x] Add support for DelegateDialog response directive
   - [x] Allow restriction of intents to a session values (for state/mode)
 - [x] Develop the full search and booking flow
-- [ ] Modify the Drivy app (API) locally to use a hardcoded session
-- [ ] Hook up the skill to the Drivy app to actually make bookings
+- [x] Modify the Drivy app (API) locally to use a hardcoded session
+- [x] Hook up the skill to the Drivy app to actually make searches
+- [ ] Get the skill to actually make bookings
 - [ ] Add cards to the Alexa app when making a booking?
 - [ ] Allow the user to ask for a cheaper/closer car? Or just another one?
 - [ ] Allow the user to filter cars?
